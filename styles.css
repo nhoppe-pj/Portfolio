@@ -1,0 +1,200 @@
+SS
+/* Wspólne style dla wszystkich stron */
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6fb;
+  color: #222;
+  line-height: 1.5;
+}
+ 
+/* Menu i stopka */
+header,
+footer {
+  background-color: #2b2f8f;
+  padding: 15px 20px;
+}
+ 
+header a,
+footer a {
+  color: white;
+  margin-right: 20px;
+}
+ 
+footer p {
+  color: white;
+  margin: 0 0 10px 0;
+}
+ 
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+ 
+h1,
+h2,
+h3 {
+  color: #2b2f8f;
+}
+ 
+img {
+  max-width: 100%;
+}
+ 
+.srodek {
+  text-align: center;
+}
+ 
+.srodek h1,
+h1.srodek {
+  font-size: 48px;
+}
+ 
+/* Ramki obok siebie, na wąskim ekranie same schodzą pod siebie */
+.boxy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+ 
+.box {
+  flex: 1;
+  min-width: 250px;
+  background-color: white;
+  border: 2px solid #2b2f8f;
+  border-radius: 12px;
+  padding: 15px;
+}
+ 
+/* Strona O mnie */
+.panel {
+  background-color: #e3e6f7;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+ 
+.obok {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+ 
+.obok img {
+  width: 40%;
+  border-radius: 12px;
+}
+
+.obokOsiag {
+  display: flex;
+  gap: 20px;
+}
+ 
+.obokOsiag img {
+  width: 40%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Karta projektu */
+.projekt {
+  position: relative;
+  background-color: white;
+  border: 2px solid #2b2f8f;
+  border-radius: 12px;
+  padding: 15px 15px 50px 15px;
+  margin-bottom: 20px;
+}
+ 
+.tag {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  background-color: #2b2f8f;
+  color: white;
+  padding: 3px 12px;
+  border-radius: 8px;
+}
+ 
+/* Przycisk */
+button {
+  background-color: #2b2f8f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+ 
+button:hover {
+  background-color: #1d2070;
+}
+ 
+/* Ramka po przejściu klawiszem Tab */
+a:focus,
+button:focus {
+  outline: 3px solid orange;
+  outline-offset: 2px;
+}
+
+/* Historia w nawiasach kwadratowych */
+.historia {
+  position: relative;
+  padding: 10px 25px;
+  text-align: justify;
+}
+
+.historia::before,
+.historia::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  border: 3px solid #2b2f8f;
+}
+
+.historia::before {
+  left: 0;
+  border-right: none;
+}
+
+.historia::after {
+  right: 0;
+  border-left: none;
+}
+ 
+/* Telefon */
+@media (max-width: 600px) {
+  .obok {
+    flex-direction: column;
+  }
+ 
+  .obok img {
+    width: 100%;
+  }
+  
+  .obokOsiag img {
+    width: 100%;
+  }
+  .srodek h1,
+  h1.srodek {
+    font-size: 32px;
+  }
+
+  .historia {
+    text-align: left;
+  }
+}
+ 
